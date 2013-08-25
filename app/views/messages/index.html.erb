@@ -1,7 +1,8 @@
-<div class="row-fluid">
-	  <div class="span6" style="width:60%; float:left;">
+<div class="container">
+	<div class="row-fluid">
+	  <div class="span6" style="width:100%; float:left;">
 		  <h3>Chatroom</h3>
-	    <table class="table" style="width:100%; float:left;">
+	    <table class="table well" style="width:100%;">
 		    <tbody>
 					<tr>
 						<td><b>Created by<b></td>
@@ -18,14 +19,16 @@
 		    </tbody>
 	    </table>
     </div>
-  </div>
+	</div>
+	<h4>Write your message</h4>
+
+	<%= form_for @message do |f| %>
+	  <div>Name <br><%= f.text_field :created_by %></div>
+	  <div> Message <br> <%= f.text_area :content %></div><br>
+	  <div><%= f.submit "Add message", class: "btn btn-small btn-primary" %></div>
+
+	<% end %>
+</div>
 
 
-<h4>Write your message</h4>
 
-<%= form_for @message do |f| %>
-  <div>Name <%= f.text_field :created_by %></div>
-  <div> Message <%= f.text_area :content %></div>
-  <div><%= f.submit %></div>
-
-<% end %>
