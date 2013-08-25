@@ -1,6 +1,20 @@
-<h1>My Messages</h1>
 
-<% @messages.each do |message| %>
-	<div><%= link_to message.content, message_path(message) %></div>
-	<div><%= message.created_by %></div>
+
+<div id="chatroom">
+  <h1>ChatRoom</h1>
+
+    <% @messages.each do |message| %>
+    	<div><%= link_to message.content, message_path(message) %></div>
+    	<div><%= message.created_by %></div>
+    <% end %>
+</div>
+
+
+<h4>Write your message</h4>
+
+<%= form_for @message do |f| %>
+  <div>Name <%= f.text_field :created_by %></div>
+  <div> Message <%= f.text_area :content %></div>
+  <div><%= f.submit %></div>
+
 <% end %>
