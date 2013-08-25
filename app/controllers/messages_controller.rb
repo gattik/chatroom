@@ -2,6 +2,8 @@ class MessagesController < ApplicationController
 
 	def index
 		@messages = Message.all
+		
+		@message = Message.new
 	end
 
 	def show
@@ -26,7 +28,7 @@ class MessagesController < ApplicationController
 	private
 
 	def message_params
-		params.require(:message).permit(:content)
+		params.require(:message).permit(:content, :created_by)
 	end
 
 

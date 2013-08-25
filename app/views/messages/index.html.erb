@@ -1,4 +1,4 @@
-
+<div id="chatroom">
 <div class="row-fluid">
 	  <div class="span6" style="width:60%; float:left;">
 		  <h3>Chatroom</h3>
@@ -11,12 +11,23 @@
 					</tr>
 					<% @messages.each do |message| %>
 					<tr>
-						<td><%= link_to message.content, message_path(message) %></td>
-						<td><%= link_to message.content, message_path(message) %></td>
-						<td><%= message.created_at.strftime("%m/%d/%Y %h/%m/%a") %></td>
+						<td><%= message.created_by %></td>
+						<td><%= message.content %></td>
+						<td><%= message.created_at.strftime("%m/%d/%Y %T") %></td>
 					</tr>
 					<% end %>
 		    </tbody>
 	    </table>
     </div>
   </div>
+</div>
+
+
+<h4>Write your message</h4>
+
+<%= form_for @message do |f| %>
+  <div>Name <%= f.text_field :created_by %></div>
+  <div> Message <%= f.text_area :content %></div>
+  <div><%= f.submit %></div>
+
+<% end %>
