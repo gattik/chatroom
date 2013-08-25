@@ -34,6 +34,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#Use batman.js
+gem 'batman-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

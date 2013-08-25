@@ -1,4 +1,7 @@
 Chatroom::Application.routes.draw do
+
+  get "chatroom/(*redirect_path)", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+
   resources :messages
 
   # The priority is based upon order of creation: first created -> highest priority.

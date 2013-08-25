@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatroom</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "chatroom" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div data-yield="main"></div>
+
+Chatroom.run()
+</body>
+</html>
